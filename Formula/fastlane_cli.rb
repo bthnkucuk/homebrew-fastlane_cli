@@ -3,12 +3,12 @@
 
 # Homebrew formula for fastlane_cli.
 #
-# NOTE: This file is a DRAFT living inside the fastlane_cli source repo at
-# dist/homebrew/Formula/. Once the first tagged release ships, it is
-# copied into the dedicated tap repo `bthnkucuk/homebrew-fastlane_cli`
-# at `Formula/fastlane_cli.rb`. The `PLACEHOLDER_REPLACED_BY_RELEASE_CI`
-# sha256 values are templating markers that release CI (Track D2)
-# substitutes on each tag push.
+# v0.1.0 ships macos-arm64 only (built locally — the GitHub Actions
+# macos-13 / linux runners were either unavailable or unbuilt at
+# release time). macos-x86_64 and linux-x86_64 will be re-added in
+# v0.1.1 once those legs come back online. Until then, Intel Mac and
+# Linux users should build from source per the README's "From source"
+# instructions.
 class FastlaneCli < Formula
   desc "Terminal-first Fastlane assistant for Flutter projects"
   homepage "https://github.com/bthnkucuk/fastlane_cli"
@@ -17,28 +17,14 @@ class FastlaneCli < Formula
 
   depends_on "fastlane"
 
-  # URL + sha256 substitution pattern (Track D2): the
-  # `PLACEHOLDER_REPLACED_BY_RELEASE_CI` markers are rewritten per-tarball
-  # by the release CI bump job, which reads the sha256 lines from the
-  # release body produced by `.github/workflows/release.yml`. The version
-  # string above is rewritten in the same pass.
+  # v0.1.0: only macos-arm64 ships. on_intel + on_linux blocks are
+  # intentionally absent so brew bails with a clear "no available
+  # bottle" error on those platforms instead of trying a missing URL.
   on_macos do
     on_arm do
       url "https://github.com/bthnkucuk/fastlane_cli/releases/download/v0.1.0/fastlane_cli-macos-arm64.tar.gz"
-      sha256 "PLACEHOLDER_REPLACED_BY_RELEASE_CI"
+      sha256 "d57e136acc82057ecc4fb889a63804f62b58c9903b0c732be91ecf0733f5ec6e"
     end
-    on_intel do
-      url "https://github.com/bthnkucuk/fastlane_cli/releases/download/v0.1.0/fastlane_cli-macos-x86_64.tar.gz"
-      sha256 "PLACEHOLDER_REPLACED_BY_RELEASE_CI"
-    end
-  end
-
-  on_linux do
-    on_intel do
-      url "https://github.com/bthnkucuk/fastlane_cli/releases/download/v0.1.0/fastlane_cli-linux-x86_64.tar.gz"
-      sha256 "PLACEHOLDER_REPLACED_BY_RELEASE_CI"
-    end
-    # linux-arm64 intentionally omitted — release.yml does not produce one.
   end
 
   def install
