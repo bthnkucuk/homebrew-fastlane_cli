@@ -12,7 +12,7 @@
 class FastlaneCli < Formula
   desc "Terminal-first Fastlane assistant for Flutter projects"
   homepage "https://github.com/bthnkucuk/fastlane_cli"
-  version "0.3.1"
+  version "0.3.2"
   license "MIT"
 
   depends_on "fastlane"
@@ -22,8 +22,8 @@ class FastlaneCli < Formula
   # bottle" error on those platforms instead of trying a missing URL.
   on_macos do
     on_arm do
-      url "https://github.com/bthnkucuk/fastlane_cli/releases/download/v0.3.1/fastlane_cli-macos-arm64.tar.gz"
-      sha256 "39f333d712268b6e8f0b202e003c3371876ceaa44254672ecc78c3ffa1336e2b"
+      url "https://github.com/bthnkucuk/fastlane_cli/releases/download/v0.3.2/fastlane_cli-macos-arm64.tar.gz"
+      sha256 "75d2b030cbcbe6dea74eda27ca21e3c4ddc59179b4caafb320d3d4ccc3ad154f"
     end
   end
 
