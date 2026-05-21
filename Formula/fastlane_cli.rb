@@ -23,7 +23,7 @@ class FastlaneCli < Formula
   on_macos do
     on_arm do
       url "https://github.com/bthnkucuk/fastlane_cli/releases/download/v0.4.6/fastlane_cli-macos-arm64.tar.gz"
-      sha256 "11bee603a7220fa2a6c4741e4c52245924597697c09786b8b60befa71678e521"
+      sha256 "f825700e2a28e0e15a6d6d05a9faf5d684100b564235dd58af7b9f1d8c3d5dde"
     end
   end
 
