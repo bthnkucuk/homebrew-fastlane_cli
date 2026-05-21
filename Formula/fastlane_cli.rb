@@ -22,7 +22,7 @@ class FastlaneCli < Formula
   # bottle" error on those platforms instead of trying a missing URL.
   on_macos do
     on_arm do
-      url "https://github.com/bthnkucuk/fastlane_cli/releases/download/v0.9.0/fastlane_cli-macos-arm64.tar.gz"
+      url "https://github.com/bthnkucuk/fastlane_cli/releases/download/v0.9.0/fastlane_cli-macos-arm64-r2.tar.gz"
       sha256 "486c40b6671f33e8b3cdd40347ecc085d84c3178a241bcd82eed90bbab46a3a6"
     end
   end
